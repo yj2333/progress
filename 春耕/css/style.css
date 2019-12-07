@@ -1,0 +1,127 @@
+.header{
+    width: 100%;
+    height: auto;
+    background: url(../images/header-bg.jpg) no-repeat center top;
+}
+.layer{
+    width: 990px;
+    height: auto;
+    margin: 0 auto;
+}
+.header-rule{
+    padding: 347px 0 91px 83px;
+}
+.header-rule li{
+    line-height: 23px;
+    color: #0c0b0a;
+}
+.header-rule span{
+    color: #a10f02;
+}
+.containter{
+    width: 984px;
+    height: auto;
+    margin: 0 auto;
+    border: #bdab85 dashed 1px;
+    background: #fdfaf4;
+    margin-bottom: 24px;
+}
+.title_1{
+    height: 62px;
+    width: 800px;
+    margin: 19px 0 0 49px;
+    background: url(../images/title-bg-1.jpg) no-repeat;
+    text-indent: -99em;
+    overflow: hidden;
+}
+.title_2{
+    height: 62px;
+    width: 800px;
+    margin: 19px 0 0 49px;
+    background: url(../images/title-bg-2.jpg) no-repeat;
+    text-indent: -99em;
+    overflow: hidden;
+}
+.title_3{
+    height: 62px;
+    width: 800px;
+    margin: 19px 0 0 49px;
+    background: url(../images/title-bg-3.jpg) no-repeat;
+    text-indent: -99em;
+    overflow: hidden;
+}
+.title_4{
+    height: 62px;
+    width: 800px;
+    margin: 19px 0 0 49px;
+    background: url(../images/title-bg-4.jpg) no-repeat;
+    text-indent: -99em;
+    overflow: hidden;
+}
+.task_1{
+    width: 938px;
+    height: 496px;
+    margin-left: 49px;
+    background: url(../images/1-bg.jpg) no-repeat 8px 0;
+}
+.task_2{
+    width: 938px;
+    height: 406px;
+    margin-left: 49px;
+    background: url(../images/2-bg.jpg) no-repeat;
+}
+.task_3{
+    width: 938px;
+    height: 472px;
+    margin-left: 49px;
+    background: url(../images/3-bg.jpg) no-repeat;
+    margin-bottom: 24px;
+}
+.main{
+    width: 320px;
+    height: auto;
+    padding-left: 616px;
+    margin-top: 41px;
+}
+.main-text{
+    width: 284px;
+}
+.main-title{
+    font-size: 18px;
+}
+.main-text dt{
+    line-height: 36px;
+}
+.main-text dd{
+    line-height: 31px;
+    padding-left: 17px;
+    background: url(../images/main-dd-bg.jpg) no-repeat 0 -7px;
+}
+.main-text dd a{
+    text-decoration: underline;
+}
+.main-button{
+    display: block;
+    width: 166px;
+    height: 45px;
+    text-align: center;
+    line-height: 45px;
+    font-size: 16px;
+    background: url(../images/button-bg.jpg) no-repeat;
+    color: #fff;
+    margin-left: 3px;
+    margin-top: 106px;
+}
+.title_4-text{
+    margin-left: 49px;
+    margin-bottom: 27px;
+    line-height: 31px;
+}
+.title_4-text li{
+    padding-left: 17px;
+    color: #666666;
+    background: url(../images/main-dd-bg.jpg) no-repeat 0 -8px;
+}
+.title_4-text span{
+    color: #a10f02;
+}
