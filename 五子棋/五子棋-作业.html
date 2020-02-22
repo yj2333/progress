@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		html,
+		body {
+			height: 100%;
+		}
+
+		a {
+			text-decoration: none;
+		}
+
+		li {
+			list-style: none;
+		}
+
+		.clearfix {
+			*zoom: 1;
+		}
+
+		.clearfix:after {
+			content: ".";
+			display: block;
+			visibility: hidden;
+			height: 0;
+			font-size: 0;
+			clear: both;
+		}
+
+		body {
+			background: #cc7a52;
+		}
+
+		.box {
+			width: 1020px;
+			height: auto;
+			margin: 0 auto;
+		}
+
+		.box-left {
+			float: left;
+			position: relative;
+			width: 155px;
+			height: auto;
+		}
+
+		.arrow {
+			position: absolute;
+			font-size: 26px;
+			height: 26px;
+			line-height: 26px;
+			left: 65px;
+			top: 38px;
+		}
+
+		.black,
+		.white {
+			display: block;
+			width: 30px;
+			height: 30px;
+			border-radius: 50%;
+			box-shadow: 2px 2px 6px #000;
+		}
+
+		.black {
+			background: -webkit-radial-gradient(#fff 0%, #000 60%);
+			/* Safari 5.1 - 6.0 */
+			background: -o-radial-gradient(#fff 0%, #000 60%);
+			/* Opera 11.6 - 12.0 */
+			background: -moz-radial-gradient(#fff 0%, #000 60%);
+			/* Firefox 3.6 - 15 */
+			background: radial-gradient(#fff 0%, #000 60%);
+			/* 标准的语法 */
+		}
+
+		.white {
+			background: -webkit-radial-gradient(#000 -100%, #fff 60%);
+			/* Safari 5.1 - 6.0 */
+			background: -o-radial-gradient(#000 -100%, #fff 60%);
+			/* Opera 11.6 - 12.0 */
+			background: -moz-radial-gradient(#000 -100%, #fff 60%);
+			/* Firefox 3.6 - 15 */
+			background: radial-gradient(#000 -100%, #fff 60%);
+			/* 标准的语法 */
+		}
+
+		.box-person {
+			padding-top: 8px;
+		}
+
+		.box-person li {
+			height: 55px;
+			padding: 25px 0 0 115px;
+		}
+
+		.box-btn {
+			display: block;
+			width: 80px;
+			text-align: center;
+			line-height: 30px;
+			color: #fff;
+			font-size: 14px;
+			height: 30px;
+			border-radius: 8px;
+			background: #000;
+			margin: 45px 0 0 75px;
+		}
+
+		.box-right {
+			float: left;
+			padding: 3px 0 0 3px;
+			position: relative;
+			height: auto;
+			margin: 32px 0 0 20px;
+		}
+
+		.box-right li {
+			float: left;
+			width: 37px;
+			height: 37px;
+			border: #000 3px double;
+			margin: -3px 0 0 -3px;
+			font-size: 10px;
+		}
+
+		.box-right .black,
+		.white {
+			position: absolute;
+		}
+	</style>
+	</style>
+</head>
+
+<body>
+	<div class="box">
+		<div class="box-left">
+			<span id="arrow" class="arrow">=》</span>
+			<ul class="box-person">
+				<li><span class="black"></span></li>
+				<li><span class="white"></span></li>
+			</ul>
+			<a class="box-btn" href="javascript:void(0)"
+				onclick="if(window.confirm('确认要重新开始吗？')){window.location.reload();}">重新开始</a>
+			<div class="input">
+				行数：<input class="rows Js-rows" type="text" value="15" size="10" disabled="">
+				列数：<input class="cols Js-cols" type="text" value="20" size="10" disabled="">
+				<button style="margin:5px 0 0 3em; font-size: 16px;" class="btn Js-btn">确认</button>
+			</div>
+		</div>
+		<div class="box-right" style="width: 800px;">
+			<ul class="Js-checkerboard" class="clearfix">
+
+			</ul>
+			<!-- <span class="black" style="left: -15px; top: -15px;"></span>
+	    	<span class="white" style="left: 25px; top: 25px;"></span> -->
+		</div>
+	</div>
+	<script>
+		var btn_node = document.querySelector('.Js-btn');
+		var rows_node = document.querySelector('.Js-rows');
+		var cols_node = document.querySelector('.Js-cols');
+		var checkerboard_node = document.querySelector('.Js-checkerboard');
+		var checkerboard_wrap_node = checkerboard_node.parentNode;
+		var chess_width = 30;//棋子的宽度
+		var cell_width = 40;//（棋盘）格子的宽度
+		//null没有落子, 1白子，-1黑子
+		/*var checker_arr =[
+			0:[null,null,null....,null]
+			....
+			14:[null,null]
+		];*/
+		var checker_arr = [];//将棋盘的落子情况，看做是一个二维数组
+		btn_node.onclick = function () {
+			checker_arr = [];//
+			var rows = Number(rows_node.value);
+			var cols = Number(cols_node.value);
+			for (var row = 0; row < rows; row++) {
+				checker_arr[row] = [];
+				for (var col = 0; col < cols; col++) {
+					var li_node = document.createElement('li');
+					checkerboard_node.appendChild(li_node);
+					checker_arr[row].push(null);
+				}
+			}
+			btn_node.disabled = true;
+			console.log(checker_arr);
+		};
+		btn_node.onclick();
+		var IsBlack = -1;//判断是否是黑棋
+		checkerboard_wrap_node.onclick = function (event) {//鼠标事件：左键点击; event鼠标事件对象
+			var event = window.event || event;//鼠标事件对象
+			var divY = checkerboard_wrap_node.offsetTop;//ul外的div节点到body之间的垂直距离
+			var divX = checkerboard_wrap_node.offsetLeft;//ul外的div节点到body之间的水平距离
+			var x = event.clientX - divX;
+			var y = event.clientY - divY;
+			console.log(Math.round(x / cell_width), Math.round(y / cell_width));
+			x = Math.round(x / cell_width);
+			y = Math.round(y / cell_width);
+			var span_node = document.createElement('span');
+			//代码自己补充
+			//
+			var left_chess = x * 40 - 15;//棋子的水平位置
+			var top_chess = y * 40 - 15;//棋子的垂直位置
+			console.log(left_chess, top_chess)
+			if (IsBlack == -1 && checker_arr[x][y] == null) {//防止重复落子
+				span_node.setAttribute('class', 'black');
+				span_node.setAttribute('style', `left: ${left_chess}px; top: ${top_chess}px;`);
+				checkerboard_wrap_node.appendChild(span_node);
+				checker_arr[x][y] = -1;//给数组相应位置赋值
+				IsBlack = -IsBlack;//黑白交替
+			}
+			else if (IsBlack == 1 && checker_arr[x][y] == null) {//防止重复落子
+				span_node.setAttribute('class', 'white');
+				span_node.setAttribute('style', `left: ${left_chess}px; top: ${top_chess}px;`);
+				checkerboard_wrap_node.appendChild(span_node);
+				checker_arr[x][y] = 1;//给数组相应位置赋值
+				IsBlack = -IsBlack;//黑白交替
+			}
+		};
+	</script>
+</body>
+
+</html>

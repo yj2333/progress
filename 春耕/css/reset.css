@@ -1,0 +1,10 @@
+/*重置样式*/
+html,body,h1,h2,h3,h4,h5,h6,ul,li,ol,dl,dt,dd,table,tr,td,div,form,section,footer,header,span,a,img,input,textarea,select,option,em,i,strong,b,label{ margin: 0; padding: 0;}
+ul,ol{ list-style: none; }
+a{text-decoration: none;color: #666666;}
+a:hover{color: #ac2217;}
+img{ border: 0 none; vertical-align: baseline; /*垂直对齐，行元素使用有效*/ }
+body{font-family: "微软雅黑";font-size: 14px;color: #0c0b0a;background:url(../images/bg.jpg) ;}
+/*清浮动*/
+.clearfix{*zoom: 1;}
+.clearfix{content: ".";display: block;height: 0;font-size: 0;visibility: hidden;}

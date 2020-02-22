@@ -1,0 +1,9 @@
+/*重置样式*/
+html,body,h1,h2,h3,h4,h5,h6,ul,li,ol,dl,dt,dd,table,tr,td,div,form,section,footer,header,span,a,img,input,textarea,select,option,em,i,strong,b,label{ margin: 0; padding: 0;}
+ul,ol{ list-style: none; }
+img{ border: 0 none;}
+a{ color: #000; text-decoration: none; }
+a:hover{ color: #e8240f;}
+.clearfix{width:1004px; height:auto; margin:0px auto;}
+.clearfix:after{ display:block; clear:both; height:0; visibility:hidden; content:".";}
+body{color: #000; font-family: '宋体'; font-size: 12px; }

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>微博注册页面</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="header">
+        <img usemap="#planetmap" src="./images/logo.png" alt="" >
+        <map name="planetmap" id="planetmap">
+            <area shape="circle" coords="200,68,40" href ="https://weibo.com/" alt="新浪微博"/>
+        </map>
+    </div>
+    <div class="containter">
+        <div class="contain-header clearfix">
+            <a class="active" href="">个人注册</a>
+            <i></i>
+            <a href="">企业注册</a>
+        </div>
+        <div class="contain-main">
+            <div class="contain-form"><!--左边的表单-->
+                <div class="contain-label">
+                    <div class="contain-label-name label-icon-email"><!--表单字体样式-->
+                        <span>*</span>
+                        <label>邮箱：</label>
+                    </div>
+                    <input class="contain-label-input" type="text" placeholder="请输入您常用邮箱"><!--文本框样式-->
+                    <div class="contain-label-help">
+                        <span>没有邮箱？</span>
+                        <a href="##">用手机注册</a>
+                    </div>
+                    <div class="contain-label-name">
+                        <span>*</span>
+                        <label>设置密码：</label>
+                    </div>
+                    <input class="contain-label-input" type="password">
+                    <div class="contain-label-useid contain-label-name">
+                        <span>*</span>
+                        <label>昵称：</label>
+                    </div>
+                    <input class="contain-label-input contain-label-useid" type="text">
+                    <div class="contain-label-name contain-label-vcode">
+                        <span>*</span>
+                        <label>验证码：</label>
+                    </div>
+                    <input class="contain-label-vcode-input contain-label-vcode" type="text">
+                    <img src="./images/vcode_1.jpg" class="contain-label-vcode-img_1">
+                    <a href="javascripe:;" class="contain-label-vcode-refresh"></a>
+                    <input type="submit" class="contain-label-submit" value="立即注册">
+                    <ul class="contain-label-link">
+                        <li><a href="##" >新浪微博服务使用协议</a></li>
+                        <li><a href="##" >新浪微博个人信息保护政策</a></li>
+                        <li><a href="##" >全国人大常委会关于加强网络信息保护的决定</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="contain-info">
+                <div class="contain-info-help">
+                    <div class="contain-info-help_1">
+                        <span>已有帐号，</span>
+                        <a href="##">直接登录»</a>
+                    </div>
+                    <p>手机快速注册</p>
+                    <p class="contain-info-help_2">编辑短信：</p>
+                    <p class="contain-info-help_3"><strong>6-16位数字</strong></p>
+                    <p class="contain-info-help_2">作为登录密码发送至：</p>
+                    <p class="contain-info-help_3"><strong>1069 009 088</strong></p>
+                    <p class="contain-info-help_2">即可注册成功。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer_1">
+            北京微梦创科网络技术有限公司 京网文[2011]0398-130号 京ICP证100780号
+        </div>
+        <div class="footer_2">
+            Copyright © 1996-2013 SINA 
+        </div>
+        <select name="language">
+            <option value="" selected>中文（简体）</option>
+    </div>
+</body>
+</html>
